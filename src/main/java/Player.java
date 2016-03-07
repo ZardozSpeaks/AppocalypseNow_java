@@ -6,14 +6,23 @@ public class Player {
   private int id;
   private int image;
   private String name;
+  private int buzz;
+  private int fullness;
+  private int alertness;
   private boolean growler;
   private boolean coffee_cup;
   private boolean dime_bag;
   private boolean doughnut_box;
+  private final static int MAX_BUZZ = 11;
+  private final static int MAX_FULLNESS = 10;
+  private final static int MAX_ALERTNESS = 10;
 
   public Player(String name, int image){
     this.name = name;
     this.image = image;
+    this.buzz = MAX_BUZZ;
+    this.fullness = MAX_FULLNESS;
+    this.alertness = MAX_ALERTNESS;
     this.growler = false;
     this.coffee_cup = false;
     this.dime_bag = false;
@@ -30,7 +39,7 @@ public class Player {
     }
   }
 
-  //GETTER METHODS//
+  //BASIC GETTERS//
 
   public int getId(){
     return id;
@@ -43,6 +52,20 @@ public class Player {
   public String getName(){
     return name;
   }
+
+  public int getFullness() {
+    return fullness;
+  }
+
+  public int getAlertness(){
+    return alertness;
+  }
+
+  public int getBuzz(){
+    return buzz;
+  }
+
+//MODIFIER GETTERS//
 
   public boolean getGrowler(){
     return growler;
@@ -60,7 +83,22 @@ public class Player {
     return doughnut_box;
   }
 
-  //SETTER METHODS//
+  //BASIC SETTERS//
+
+  public void setAlertness(int stoked) {
+    this.alertness += stoked;
+  }
+
+  public void setBuzz(int chem) {
+    this.buzz += chem;
+  }
+
+  public void setFullness(int nom) {
+    this.fullness += nom;
+  }
+
+
+  //MODIFIER SETTERS//
 
   public void setGrowler(){
     this.growler = true;
@@ -82,7 +120,7 @@ public class Player {
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO players (image, name, growler, coffee_cup, dime_bag, doughnut_box) VALUES (:image, :name, :growler, :coffee_cup, :dime_bag, :doughnut_box)";
+      String sql = "INSERT INTO players (image, name, growler, coffee_cup, dime_bag, doughnut_box, buzz, fullness, alertness) VALUES (:image, :name, :growler, :coffee_cup, :dime_bag, :doughnut_box, :buzz, :fullness, :alertness)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("image", this.image)
         .addParameter("name", this.name)
@@ -90,6 +128,9 @@ public class Player {
         .addParameter("coffee_cup", this.coffee_cup)
         .addParameter("dime_bag", this.dime_bag)
         .addParameter("doughnut_box", this.doughnut_box)
+        .addParameter("buzz", this.buzz)
+        .addParameter("fullness", this.fullness)
+        .addParameter("alertness", this.alertness)
         .executeUpdate()
         .getKey();
     }
@@ -118,13 +159,16 @@ public class Player {
 
   public void update() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE players SET growler = :growler, coffee_cup = :coffee_cup, dime_bag = :dime_bag, doughnut_box = :doughnut_box WHERE id = :id";
+      String sql = "UPDATE players SET growler = :growler, coffee_cup = :coffee_cup, dime_bag = :dime_bag, doughnut_box = :doughnut_box, buzz = :buzz, alertness = :alertness, fullness = :fullness WHERE id = :id";
       con.createQuery(sql)
         .addParameter("id", this.id)
         .addParameter("growler", this.growler)
         .addParameter("coffee_cup", this.coffee_cup)
         .addParameter("dime_bag", this.dime_bag)
         .addParameter("doughnut_box", this.doughnut_box)
+        .addParameter("buzz", this.buzz)
+        .addParameter("fullness", this.fullness)
+        .addParameter("alertness", this.alertness)
         .executeUpdate();
     }
   }
