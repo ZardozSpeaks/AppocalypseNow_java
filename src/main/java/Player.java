@@ -97,6 +97,12 @@ public class Player {
     this.fullness += nom;
   }
 
+  public void reduceStats() {
+    this.fullness --;
+    this.buzz --;
+    this.alertness --;
+  }
+
 
   //MODIFIER SETTERS//
 
@@ -157,19 +163,29 @@ public class Player {
 
   //UPDATE//
 
-  public void update() {
+  public void updateModifier() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE players SET growler = :growler, coffee_cup = :coffee_cup, dime_bag = :dime_bag, doughnut_box = :doughnut_box, buzz = :buzz, alertness = :alertness, fullness = :fullness WHERE id = :id";
+      String sql = "UPDATE players SET growler = :growler, coffee_cup = :coffee_cup, dime_bag = :dime_bag, doughnut_box = :doughnut_box WHERE id = :id";
       con.createQuery(sql)
         .addParameter("id", this.id)
         .addParameter("growler", this.growler)
         .addParameter("coffee_cup", this.coffee_cup)
         .addParameter("dime_bag", this.dime_bag)
         .addParameter("doughnut_box", this.doughnut_box)
+        .executeUpdate();
+    }
+  }
+
+  public void updateStats() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE players SET buzz = :buzz, alertness = :alertness, fullness = :fullness WHERE id = :id";
+      con.createQuery(sql)
+        .addParameter("id", this.id)
         .addParameter("buzz", this.buzz)
         .addParameter("fullness", this.fullness)
         .addParameter("alertness", this.alertness)
         .executeUpdate();
     }
   }
+
 }
