@@ -79,6 +79,18 @@ public class Game {
   }
 
   public void search(Player player, Quadrant quadrant) {
-    quadrant.getBeer();
+    player.setBeers(quadrant.getBeer());
+    player.setKindBud(quadrant.getKindBud());
+    player.setCoffees(quadrant.getCoffees());
+    player.setDoughnuts(quadrant.getDoughnuts());
+    player.updateInventory();
+  }
+
+  public boolean isDead(Player player) {
+    if((player.getBuzz() == 0) || (player.getAlertness() == 0) || (player.getFullness() == 0)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
