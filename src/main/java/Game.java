@@ -29,4 +29,56 @@ public class Game {
       }
     }
   }
+
+  public void burnOneDown(Player player) {
+    if(player.getDimeBag() == true){
+      player.setBuzz(2);
+      player.setAlertness(-1);
+      player.updateStats();
+    } else {
+      player.setBuzz(1);
+      player.setAlertness(-1);
+      player.updateStats();
+    }
+  }
+
+  public void eatDoughnuts(Player player) {
+    if(player.getDoughnutBox() == true) {
+      player.setFullness(2);
+      player.setBuzz(-1);
+      player.updateStats();
+    } else {
+      player.setFullness(1);
+      player.setBuzz(-1);
+      player.updateStats();
+    }
+  }
+
+  public void drinkCoffee(Player player) {
+    if(player.getCoffee() == true) {
+      player.setAlertness(2);
+      player.setFullness(-1);
+      player.updateStats();
+    } else {
+      player.setAlertness(1);
+      player.setFullness(-1);
+      player.updateStats();
+    }
+  }
+
+  public void drinkBeer(Player player) {
+    if (player.getGrowler() == true) {
+      player.setBuzz(2);
+      player.setFullness(-1);
+      player.updateStats()
+    } else {
+      player.setBuzz(1);
+      player.setFullness(-1);
+      player.updateStats()
+    }
+  }
+
+  public void search(Player player, Quadrant quadrant) {
+    quadrant.getBeer();
+  }
 }

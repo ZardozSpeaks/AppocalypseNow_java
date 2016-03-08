@@ -9,6 +9,10 @@ public class Player {
   private int buzz;
   private int fullness;
   private int alertness;
+  private int kind_bud;
+  private int doughnuts;
+  private int beers;
+  private int coffees;
   private boolean growler;
   private boolean coffee_cup;
   private boolean dime_bag;
@@ -23,6 +27,10 @@ public class Player {
     this.buzz = MAX_BUZZ;
     this.fullness = MAX_FULLNESS;
     this.alertness = MAX_ALERTNESS;
+    this.kind_bud = 0;
+    this.doughnuts = 0;
+    this.beers = 0;
+    this.coffees = 0;
     this.growler = false;
     this.coffee_cup = false;
     this.dime_bag = false;
@@ -65,6 +73,24 @@ public class Player {
     return buzz;
   }
 
+//INVENTORY GETTERS//
+
+  public int getDoughnuts() {
+    return doughnuts;
+  }
+
+  public int getCoffees() {
+    return coffees;
+  }
+
+  public int getKindBud() {
+    return kind_bud;
+  }
+
+  public int getBeers() {
+    return beers;
+  }
+
 //MODIFIER GETTERS//
 
   public boolean getGrowler(){
@@ -103,6 +129,23 @@ public class Player {
     this.alertness --;
   }
 
+  //INVENTORY SETTERS//
+
+  public void setDoughnuts(int doughnut) {
+    this.doughnuts += doughnut;
+  }
+
+  public void setCoffees(int coffee) {
+    this.coffees += coffee;
+  }
+
+  public void setKindBud(int nugs) {
+    this.kind_bud += nugs;
+  }
+
+  public void setBeers(int beer) {
+    this.beers += beer;
+  }
 
   //MODIFIER SETTERS//
 
@@ -126,7 +169,7 @@ public class Player {
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO players (image, name, growler, coffee_cup, dime_bag, doughnut_box, buzz, fullness, alertness) VALUES (:image, :name, :growler, :coffee_cup, :dime_bag, :doughnut_box, :buzz, :fullness, :alertness)";
+      String sql = "INSERT INTO players (image, name, growler, coffee_cup, dime_bag, doughnut_box, buzz, fullness, alertness, kind_bud, beers, doughnuts, coffees) VALUES (:image, :name, :growler, :coffee_cup, :dime_bag, :doughnut_box, :buzz, :fullness, :alertness, :kind_bud, :beers, :doughnuts, :coffees)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("image", this.image)
         .addParameter("name", this.name)
@@ -137,6 +180,10 @@ public class Player {
         .addParameter("buzz", this.buzz)
         .addParameter("fullness", this.fullness)
         .addParameter("alertness", this.alertness)
+        .addParameter("kind_bud", this.kind_bud)
+        .addParameter("beers", this.beers)
+        .addParameter("doughnuts", this.doughnuts)
+        .addParameter("coffees", this.coffees)
         .executeUpdate()
         .getKey();
     }
@@ -163,15 +210,19 @@ public class Player {
 
   //UPDATE//
 
-  public void updateModifier() {
+  public void updateInventory() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE players SET growler = :growler, coffee_cup = :coffee_cup, dime_bag = :dime_bag, doughnut_box = :doughnut_box WHERE id = :id";
+      String sql = "UPDATE players SET growler = :growler, coffee_cup = :coffee_cup, dime_bag = :dime_bag, doughnut_box = :doughnut_box, kind_bud=:kind_bud, beers=:beers, doughnuts=:doughnuts, coffees=:coffees WHERE id = :id";
       con.createQuery(sql)
         .addParameter("id", this.id)
         .addParameter("growler", this.growler)
         .addParameter("coffee_cup", this.coffee_cup)
         .addParameter("dime_bag", this.dime_bag)
         .addParameter("doughnut_box", this.doughnut_box)
+        .addParameter("kind_bud", this.kind_bud)
+        .addParameter("beers", this.beers)
+        .addParameter("doughnuts", this.doughnuts)
+        .addParameter("coffees", this.coffees)
         .executeUpdate();
     }
   }
@@ -187,5 +238,4 @@ public class Player {
         .executeUpdate();
     }
   }
-
 }
