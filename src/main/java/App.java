@@ -18,6 +18,9 @@ public class App {
 
     get("/map", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
+      int playerId = request.session().attribute("playerId");
+      Player player = Player.find(playerId);
+      model.put("player", player);
       model.put("template", "templates/map.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -30,8 +33,12 @@ public class App {
       newPlayer.save();
       int playerId = newPlayer.getId();
       Game newGame = new Game();
+      newGame.save();
+      int gameId = newGame.getId();
       request.session().attribute("playerId", playerId);
-      model.put("player", Player.find(newPlayer.getId()));
+      request.session().attribute("gameId", gameId);
+      model.put("player", Player.find(playerId));
+      model.put("game", Game.find(gameId));
       model.put("template", "templates/map.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

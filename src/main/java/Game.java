@@ -1,13 +1,15 @@
 import java.lang.*;
+import org.sql2o.*;
 
 public class Game {
 
-  private int startTime;
-  private boolean gameRunning;
+  private int id;
+  private int start_time;
+  private boolean game_running;
 
   public Game(){
-    startTime = getSec();
-    gameRunning = true;
+    start_time = getSec();
+    game_running = true;
   }
 
   int getSec() {
@@ -15,12 +17,12 @@ public class Game {
   }
 
   public void gameLoop(Player player) {
-    while (gameRunning = true) {
+    while (game_running = true) {
       int newTime = getSec();
-      if ((startTime - newTime) % 300 == 0) {
+      if ((start_time - newTime) % 300 == 0) {
         player.reduceStats();
         player.updateStats();
-        startTime = newTime;
+        start_time = newTime;
       }
       try {
         Thread.sleep(1);
@@ -91,6 +93,30 @@ public class Game {
       return true;
     } else {
       return false;
+    }
+  }
+
+  public int getId(){
+    return id;
+  }
+
+  public void save() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO games (start_time, game_running) VALUES (:start_time, :game_running)";
+      this.id = (int) con.createQuery(sql, true)
+      .addParameter("start_time", this.start_time)
+      .addParameter("game_running", this.game_running)
+      .executeUpdate()
+      .getKey();
+    }
+  }
+
+  public static Game find(int id) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM games where id=:id";
+      return con.createQuery(sql)
+      .addParameter("id", id)
+      .executeAndFetchFirst(Game.class);
     }
   }
 }
