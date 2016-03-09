@@ -43,7 +43,11 @@ CREATE TABLE players (
     doughnut_box boolean,
     buzz integer,
     fullness integer,
-    alertness integer
+    alertness integer,
+    kind_bud integer,
+    doughnuts integer,
+    beers integer,
+    coffees integer
 );
 
 
@@ -121,7 +125,7 @@ ALTER TABLE ONLY quadrants ALTER COLUMN id SET DEFAULT nextval('quadrants_id_seq
 -- Data for Name: players; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
-COPY players (id, name, image, growler, coffee_cup, dime_bag, doughnut_box, buzz, fullness, alertness) FROM stdin;
+COPY players (id, name, image, growler, coffee_cup, dime_bag, doughnut_box, buzz, fullness, alertness, kind_bud, doughnuts, beers, coffees) FROM stdin;
 \.
 
 
