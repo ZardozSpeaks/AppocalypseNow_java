@@ -27,9 +27,10 @@ public class App {
       String name = request.queryParams("name");
       int selectedImage = Integer.parseInt(request.queryParams("image"));
       Player newPlayer = new Player(name, selectedImage);
-      Game newGame = new Game();
-      request.session().attribute("playerId", newPlayer.getId());
       newPlayer.save();
+      int playerId = newPlayer.getId();
+      Game newGame = new Game();
+      request.session().attribute("playerId", playerId);
       model.put("player", Player.find(newPlayer.getId()));
       model.put("template", "templates/map.vtl");
       return new ModelAndView(model, layout);
@@ -37,6 +38,9 @@ public class App {
 
     get("/nw", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
+      int playerId = request.session().attribute("playerId");
+      Player player = Player.find(playerId);
+      model.put("player", player);
       model.put("template", "templates/nw.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
