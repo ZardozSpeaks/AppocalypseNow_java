@@ -41,7 +41,7 @@ public class PlayerTest {
     testPlayer.save();
     testPlayer.setGrowler();
     testPlayer.setDimeBag();
-    testPlayer.updateModifier();
+    testPlayer.updateInventory();
     Player savedPlayer = Player.find(testPlayer.getId());
     assertEquals(savedPlayer.getGrowler(), true);
     assertEquals(savedPlayer.getDimeBag(), true);

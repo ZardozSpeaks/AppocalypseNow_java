@@ -55,7 +55,7 @@ public class Game {
   }
 
   public void drinkCoffee(Player player) {
-    if(player.getCoffee() == true) {
+    if(player.getCoffeeCup() == true) {
       player.setAlertness(2);
       player.setFullness(-1);
       player.updateStats();
@@ -70,19 +70,19 @@ public class Game {
     if (player.getGrowler() == true) {
       player.setBuzz(2);
       player.setFullness(-1);
-      player.updateStats()
+      player.updateStats();
     } else {
       player.setBuzz(1);
       player.setFullness(-1);
-      player.updateStats()
+      player.updateStats();
     }
   }
 
   public void search(Player player, Quadrant quadrant) {
     player.setBeers(quadrant.getBeer());
     player.setKindBud(quadrant.getKindBud());
-    player.setCoffees(quadrant.getCoffees());
-    player.setDoughnuts(quadrant.getDoughnuts());
+    player.setCoffees(quadrant.getCoffee());
+    player.setDoughnuts(quadrant.getDoughnut());
     player.updateInventory();
   }
 
