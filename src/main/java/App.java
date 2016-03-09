@@ -16,6 +16,21 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/map", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/map.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/map", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      String name = request.queryParams("name");
+      int selectedImage = Integer.parseInt(request.queryParams("image"));
+      Player newPlayer = new Player(name, selectedImage);
+      model.put("template", "templates/map.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     get("/nw", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/nw.vtl");
@@ -42,6 +57,7 @@ public class App {
 
     get("/nw/1", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("quadrant", Quadrant.find(1));
       model.put("template", "templates/nw1.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

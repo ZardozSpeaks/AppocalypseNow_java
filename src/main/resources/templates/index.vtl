@@ -1,132 +1,32 @@
-<head>
-    <title>Trimet Map</title>
-    <a> <center> <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/12/TriMet_logo.svg/1280px-TriMet_logo.svg.png" style="width:100px;height:100px;border:14;"</a>
-    <h2> <center> Pick a Neighborhood to travel to: </center> </h2>
+<center> <h2> Create a Character </h2> </center>
 
-</head>
+<form  action="/map" method="post">
+  <center>  <input name="name" id="name" type="text" required> </center>
 
-<body>
+  <center> <h3>Choose a Player Picture</h3> </center>
   <div class="row">
-    <div class="col-md-6">
-      <div class="imgWrap">
-        <a href="/nw">
-          <img src="https://github.com/jakemento/apocalypse-files/blob/master/Screen%20Shot%202016-03-07%20at%209.49.24%20AM.png?raw=true" alt="HTML tutorial">
-          <p class="imgDescription">
-            <br>
-            <br>
-            <br>
-            Rogue Brewery
-            <br>
-            <br>
-            <br>
-            Park Blocks
-            <br>
-            <br>
-            <br>
-            Providence Park
-            <br>
-            <br>
-            <br>
-            Blue Star Donuts
-            <br>
-            <br>
-            <br>
-            <br>
-          </p>
 
-          </a>
-      </div>
+    <div class="col-md-3">
+      <input type="radio" class="radio" name="image" id="label1" value="1" checked />
+      <label for="label1" class="label1">Charlie</label>
     </div>
 
-    <div class="col-md-6">
-      <div class="imgWrap">
-        <a href="/ne">
-          <img src="https://github.com/jakemento/apocalypse-files/blob/master/Screen%20Shot%202016-03-07%20at%209.49.37%20AM.png?raw=true" alt="HTML tutorial">
-          <p class="imgDescription">
-          <br>
-          <br>
-          <br>
-          The Radio Room
-          <br>
-          <br>
-          <br>
-          Portland Airport
-          <br>
-          <br>
-          <br>
-          MODA center
-          <br>
-          <br>
-          <br>
-           Division Foodcart
-          <br>
-          <br>
-          <br>
-          <br>
-          </p>
-        </a>
-      </div>
+    <div class="col-md-3">
+      <input type="radio" class="radio" name="image" id="label2" value="2" />
+      <label for="label2" class="label2">Blue-Man</label>
     </div>
+
+    <div class="col-md-3">
+      <input type="radio" class="radio" name="image" id="label3" value="3" />
+      <label for="label3" class="label3">Darth Piper</label>
+    </div>
+
+    <div class="col-md-3">
+      <input type="radio" class="radio" name="image" id="label4" value="4" />
+      <label for="label4" class="label4">Portlandia</label>
+    </div>
+
   </div>
-
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="imgWrap">
-        <a href="/sw">
-          <img src="https://github.com/jakemento/apocalypse-files/blob/master/Screen%20Shot%202016-03-07%20at%209.49.53%20AM.png?raw=true" alt="HTML tutorial">
-          <p class="imgDescription">
-          <br>
-          <br>
-          <br>
-          <br>
-          Portland State
-          <br>
-          <br>
-          <br>
-          Voodoo Doughnuts
-          <br>
-          <br>
-          <br>
-          Epicodus
-          <br>
-          <br>
-          <br>
-          Powell's Books
-          <br>
-          </p>
-        </a>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="imgWrap">
-        <a href="/se">
-          <img src="https://github.com/jakemento/apocalypse-files/blob/master/Screen%20Shot%202016-03-07%20at%209.50.03%20AM.png?raw=true" alt="HTML tutorial">
-          <p class="imgDescription">
-          <br>
-          <br>
-          <br>
-          <br>
-          Ladd's Addition
-          <br>
-          <br>
-          <br>
-          Aladdin Theater
-          <br>
-          <br>
-          <br>
-          Hawthorne Foodcarts
-          <br>
-          <br>
-          <br>
-          Circa 33
-          <br>
-          </p>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-</body>
+  <br>
+  <center> <button class="btn" type="submit">Start Game!</button> </center>
+</form>

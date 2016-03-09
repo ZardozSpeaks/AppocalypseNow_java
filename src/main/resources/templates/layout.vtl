@@ -19,12 +19,10 @@
   </body>
 
 <footer>
-<p> <center> <>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<>.<> </p>
-
   <div class="row">
     <div class="col-md-4">
     </div>
-
+    #if($player)
     <div class="col-md-4">
       <div class="stats">
         <div class="row">
@@ -32,15 +30,17 @@
             <img src="/images/imageTitle.png" alt="silhoutte">
           </div>
 
+
           <div class="col-md-6">
-            <h2> STATS </h2>
-            <h4> Buzz Level: </h4>
+            <h2> $player.getName()'s STATS </h2>
+            <h4> Buzz Level: $player.getBuzz()</h4>
 
-            <h4> Alertness: </h4>
+            <h4> Alertness: $player.getAlertness()</h4>
 
-            <h4> Fullness: </h4>
+            <h4> Fullness: $player.getFullness()</h4>
           </div>
         </div>
+        #end
       </div>
     </div>
 

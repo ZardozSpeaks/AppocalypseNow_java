@@ -90,3 +90,58 @@ body {
   opacity: 1;
   cursor: url('http://www.rw-designer.com/cursor-view/59707.png'), default;
 }
+
+/*CHARATER STYLING*/
+
+.radio {
+    opacity: 0;
+    position: absolute;
+}
+
+.label1 {
+    background: url(/images/Charlie.jpg);
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 216px;
+    height: 270px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.label2 {
+    background: url(/images/blueman.jpg);
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 216px;
+    height: 270px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.label3 {
+    background: url(/images/Darthpiper.jpg);
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 216px;
+    height: 270px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.label4 {
+    background: url(/images/statue.jpg);
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 216px;
+    height: 270px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+input[type="radio"]:checked + label {
+    border: 10px solid orange;
+}
