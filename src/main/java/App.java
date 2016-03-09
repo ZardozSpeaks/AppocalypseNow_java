@@ -46,7 +46,9 @@ public class App {
     get("/nw", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/nw.vtl");
       return new ModelAndView(model, layout);
@@ -55,7 +57,9 @@ public class App {
     get("/ne", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/ne.vtl");
       return new ModelAndView(model, layout);
@@ -64,7 +68,9 @@ public class App {
     get("/sw", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/sw.vtl");
       return new ModelAndView(model, layout);
@@ -73,7 +79,9 @@ public class App {
     get("/se", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/se.vtl");
       return new ModelAndView(model, layout);
@@ -82,7 +90,9 @@ public class App {
     get("/nw/1", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       Quadrant currentQuad = Quadrant.find(1);
       currentQuad.setDoughnut();
       currentQuad.setBeer();
@@ -101,7 +111,9 @@ public class App {
     get("/nw/2", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/nw2.vtl");
       return new ModelAndView(model, layout);
@@ -116,7 +128,9 @@ public class App {
     get("/nw/3", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/nw3.vtl");
       return new ModelAndView(model, layout);
@@ -132,7 +146,9 @@ public class App {
     get("/nw/4", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/nw4.vtl");
       return new ModelAndView(model, layout);
@@ -147,7 +163,9 @@ public class App {
     get("/se/1", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/se1.vtl");
       return new ModelAndView(model, layout);
@@ -162,7 +180,9 @@ public class App {
     get("/se/2", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/se2.vtl");
       return new ModelAndView(model, layout);
@@ -177,7 +197,9 @@ public class App {
     get("/se/3", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/se3.vtl");
       return new ModelAndView(model, layout);
@@ -192,7 +214,9 @@ public class App {
     get("/se/4", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/se4.vtl");
       return new ModelAndView(model, layout);
@@ -207,7 +231,9 @@ public class App {
     get("/sw/1", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/sw1.vtl");
       return new ModelAndView(model, layout);
@@ -222,7 +248,9 @@ public class App {
     get("/sw/2", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/sw2.vtl");
       return new ModelAndView(model, layout);
@@ -237,7 +265,9 @@ public class App {
     get("/sw/3", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/sw3.vtl");
       return new ModelAndView(model, layout);
@@ -252,7 +282,9 @@ public class App {
     get("/sw/4", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/sw4.vtl");
       return new ModelAndView(model, layout);
@@ -268,7 +300,9 @@ public class App {
     get("/ne/1", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/ne1.vtl");
       return new ModelAndView(model, layout);
@@ -283,7 +317,9 @@ public class App {
     get("/ne/2", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/ne2.vtl");
       return new ModelAndView(model, layout);
@@ -298,7 +334,9 @@ public class App {
     get("/ne/3", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/ne3.vtl");
       return new ModelAndView(model, layout);
@@ -313,7 +351,9 @@ public class App {
     get("/ne/4", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
       model.put("player", player);
       model.put("template", "templates/ne4.vtl");
       return new ModelAndView(model, layout);
