@@ -93,20 +93,21 @@ public class App {
       int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
       Game game = Game.find(gameId);
-      Quadrant currentQuad = Quadrant.find(1);
-      currentQuad.setDoughnut();
-      currentQuad.setBeer();
+      Quadrant quadrant = Quadrant.find(1);
+      quadrant.setDoughnut();
+      quadrant.setBeer();
+      model.put("game", game);
       model.put("player", player);
-      model.put("quadrant", currentQuad);
+      model.put("quadrant", quadrant);
       model.put("template", "templates/nw1.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     post("/nw/1", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/nw1.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
+      response.redirect("/nw/1");
+      return null;
+    });
 
     get("/nw/2", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
