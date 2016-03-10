@@ -53,7 +53,6 @@ public class Game {
       player.setFullness(2);
       player.setBuzz(-1);
       player.setDoughnuts(-1);
-      player.setDoughnuts(-1);
       player.updateStats();
       player.updateInventory();
     } else {

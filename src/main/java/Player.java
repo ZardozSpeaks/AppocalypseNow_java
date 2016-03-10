@@ -21,6 +21,7 @@ public class Player {
   private final static int MAX_FULLNESS = 10;
   private final static int MAX_ALERTNESS = 10;
 
+
   public Player(String name, int image){
     this.name = name;
     this.image = image;
@@ -124,7 +125,7 @@ public class Player {
   }
 
   public void setFullness(int nom) {
-    if(this.buzz < MAX_FULLNESS) {
+    if(this.fullness < MAX_FULLNESS) {
       this.fullness += nom;
     }
   }
@@ -138,19 +139,35 @@ public class Player {
   //INVENTORY SETTERS//
 
   public void setDoughnuts(int doughnut) {
-    this.doughnuts += doughnut;
+    if(this.doughnuts >= 0) {
+      this.doughnuts = Math.max(this.doughnuts + doughnut, 0);
+    } else {
+      this.doughnuts += doughnut;
+    }
   }
 
   public void setCoffees(int coffee) {
-    this.coffees += coffee;
+    if(this.coffees >= 0) {
+      this.coffees += Math.max(this.coffees + coffee, 0);
+    } else {
+      this.coffees += coffee;
+    }
   }
 
   public void setKindBud(int nugs) {
-    this.kind_bud += nugs;
+    if(this.kind_bud >= 0) {
+      this.kind_bud += Math.max(this.kind_bud + nugs, 0);
+    } else {
+      this.kind_bud += nugs;
+    }
   }
 
   public void setBeers(int beer) {
-    this.beers += beer;
+    if(this.beers >= 0) {
+      this.beers += Math.max(this.beers + beer, 0);
+    } else {
+      this.beers += beer;
+    }
   }
 
   //MODIFIER SETTERS//
