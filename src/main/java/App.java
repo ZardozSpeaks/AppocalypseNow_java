@@ -105,6 +105,22 @@ public class App {
 
     post("/nw/1", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
+      int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
+      Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
+      Quadrant quadrant = Quadrant.find(1);
+      String userAction = request.queryParams("activity");
+
+      if (userAction.equals("search")) {
+        game.search(player,quadrant);
+      } else if (userAction.equals("sleep")) {
+        game.drinkCoffee(player);
+      } else if (userAction.equals("eat")) {
+        game.eatDoughnuts(player);
+      } else if (userAction.equals("burn")){
+        game.burnOneDown(player);
+      }
       response.redirect("/nw/1");
       return null;
     });
