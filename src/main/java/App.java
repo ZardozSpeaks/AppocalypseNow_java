@@ -94,8 +94,6 @@ public class App {
       Player player = Player.find(playerId);
       Game game = Game.find(gameId);
       Quadrant quadrant = Quadrant.find(1);
-      quadrant.setDoughnut();
-      quadrant.setBeer();
       model.put("game", game);
       model.put("player", player);
       model.put("quadrant", quadrant);
@@ -111,6 +109,9 @@ public class App {
       Game game = Game.find(gameId);
       Quadrant quadrant = Quadrant.find(1);
       String userAction = request.queryParams("activity");
+
+      quadrant.setDoughnut();
+      quadrant.setBeer();
 
       if (userAction.equals("search")) {
         game.search(player,quadrant);
@@ -131,16 +132,39 @@ public class App {
       int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
       Game game = Game.find(gameId);
+      Quadrant quadrant = Quadrant.find(1);
+      model.put("game", game);
       model.put("player", player);
+      model.put("quadrant", quadrant);
       model.put("template", "templates/nw2.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     post("/nw/2", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/nw2.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
+      int playerId = request.session().attribute("playerId");
+      int gameId = request.session().attribute("gameId");
+      Player player = Player.find(playerId);
+      Game game = Game.find(gameId);
+      Quadrant quadrant = Quadrant.find(1);
+      String userAction = request.queryParams("activity");
+
+      quadrant.setCoffee();
+      quadrant.setDoughnut();
+      quadrant.setBeer();
+
+      if (userAction.equals("search")) {
+        game.search(player,quadrant);
+      } else if (userAction.equals("drinkBeer")) {
+        game.drinkBeer(player);
+      } else if (userAction.equals("eatDoughnuts")) {
+        game.eatDoughnuts(player);
+      } else if (userAction.equals("burn")){
+        game.burnOneDown(player);
+      }
+      response.redirect("/nw/2");
+      return null;
+    });
 
     get("/nw/3", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();

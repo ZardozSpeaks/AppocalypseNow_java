@@ -112,15 +112,21 @@ public class Player {
   //BASIC SETTERS//
 
   public void setAlertness(int stoked) {
-    this.alertness += stoked;
+    if(this.alertness < MAX_ALERTNESS) {
+      this.alertness += stoked;
+    }
   }
 
   public void setBuzz(int chem) {
-    this.buzz += chem;
+    if(this.buzz < MAX_BUZZ) {
+      this.buzz += chem;
+    }
   }
 
   public void setFullness(int nom) {
-    this.fullness += nom;
+    if(this.buzz < MAX_FULLNESS) {
+      this.fullness += nom;
+    }
   }
 
   public void reduceStats() {

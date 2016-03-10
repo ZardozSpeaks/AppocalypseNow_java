@@ -36,11 +36,15 @@ public class Game {
     if(player.getDimeBag() == true){
       player.setBuzz(2);
       player.setAlertness(-1);
+      player.setKindBud(-1);
       player.updateStats();
+      player.updateInventory();
     } else {
       player.setBuzz(1);
       player.setAlertness(-1);
+      player.setKindBud(-1);
       player.updateStats();
+      player.updateInventory();
     }
   }
 
@@ -48,11 +52,16 @@ public class Game {
     if(player.getDoughnutBox() == true) {
       player.setFullness(2);
       player.setBuzz(-1);
+      player.setDoughnuts(-1);
+      player.setDoughnuts(-1);
       player.updateStats();
+      player.updateInventory();
     } else {
       player.setFullness(1);
       player.setBuzz(-1);
+      player.setDoughnuts(-1);
       player.updateStats();
+      player.updateInventory();
     }
   }
 
@@ -60,11 +69,15 @@ public class Game {
     if(player.getCoffeeCup() == true) {
       player.setAlertness(2);
       player.setFullness(-1);
+      player.setCoffees(-1);
       player.updateStats();
+      player.updateInventory();
     } else {
       player.setAlertness(1);
       player.setFullness(-1);
+      player.setCoffees(-1);
       player.updateStats();
+      player.updateInventory();
     }
   }
 
@@ -72,11 +85,17 @@ public class Game {
     if (player.getGrowler() == true) {
       player.setBuzz(2);
       player.setFullness(-1);
+      player.setBeers(-1);
+      player.setAlertness(-1);
       player.updateStats();
+      player.updateInventory();
     } else {
       player.setBuzz(1);
       player.setFullness(-1);
+      player.setAlertness(-1);
+      player.setBeers(-1);
       player.updateStats();
+      player.updateInventory();
     }
   }
 
