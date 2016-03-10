@@ -157,6 +157,94 @@ body {
     margin: 10px;
 }
 
+.label5 {
+    background: url(/images/armisen.jpg);
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 216px;
+    height: 270px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.label6 {
+    background: url(/images/silver.jpg);
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 216px;
+    height: 270px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.label7 {
+    background: url(/images/hipster.jpg);
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 216px;
+    height: 270px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.label8 {
+    background: url(/images/bunyan.jpg);
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 216px;
+    height: 270px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.label9 {
+    background: url(/images/parking.jpg);
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 216px;
+    height: 270px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.label10 {
+    background: url(/images/grimm.jpg);
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 216px;
+    height: 270px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.label11 {
+    background: url(/images/copper.jpg);
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 216px;
+    height: 270px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.label12 {
+    background: url(/images/damian.jpg);
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 216px;
+    height: 270px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
 input[type="radio"]:checked + label {
     border: 10px solid orange;
 }
