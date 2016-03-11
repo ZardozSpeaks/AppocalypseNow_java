@@ -230,12 +230,12 @@ public class App {
 
       quadrant.setCoffee();
       quadrant.setDoughnut();
-      quadrant.setBeer();
+      // quadrant.setBeer();
 
       if (userAction.equals("search")) {
         game.search(player,quadrant);
-      } else if (userAction.equals("drinkBeer")) {
-        game.drinkBeer(player);
+      } else if (userAction.equals("drinkCoffee")) {
+        game.drinkCoffee(player);
       } else if (userAction.equals("eatDoughnuts")) {
         game.eatDoughnuts(player);
       } else if (userAction.equals("burn")){
