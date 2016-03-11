@@ -132,7 +132,7 @@ public class App {
       int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
       Game game = Game.find(gameId);
-      Quadrant quadrant = Quadrant.find(1);
+      Quadrant quadrant = Quadrant.find(2);
       model.put("game", game);
       model.put("player", player);
       model.put("quadrant", quadrant);
@@ -146,7 +146,7 @@ public class App {
       int gameId = request.session().attribute("gameId");
       Player player = Player.find(playerId);
       Game game = Game.find(gameId);
-      Quadrant quadrant = Quadrant.find(1);
+      Quadrant quadrant = Quadrant.find(2);
       String userAction = request.queryParams("activity");
 
       quadrant.setCoffee();

@@ -113,20 +113,20 @@ public class Player {
   //BASIC SETTERS//
 
   public void setAlertness(int stoked) {
-    if(this.alertness < MAX_ALERTNESS) {
-      this.alertness += stoked;
+    if(this.alertness <= MAX_ALERTNESS) {
+      this.alertness = Math.min(this.alertness + stoked, MAX_ALERTNESS);
     }
   }
 
   public void setBuzz(int chem) {
-    if(this.buzz < MAX_BUZZ) {
-      this.buzz += chem;
+    if(this.buzz <= MAX_BUZZ) {
+      this.buzz = Math.min(this.buzz + chem, MAX_BUZZ);
     }
   }
 
   public void setFullness(int nom) {
-    if(this.fullness < MAX_FULLNESS) {
-      this.fullness += nom;
+    if(this.fullness <= MAX_FULLNESS) {
+      this.fullness = Math.min(this.fullness + nom, MAX_FULLNESS);
     }
   }
 
@@ -148,7 +148,7 @@ public class Player {
 
   public void setCoffees(int coffee) {
     if(this.coffees >= 0) {
-      this.coffees += Math.max(this.coffees + coffee, 0);
+      this.coffees = Math.max(this.coffees + coffee, 0);
     } else {
       this.coffees += coffee;
     }
@@ -156,7 +156,7 @@ public class Player {
 
   public void setKindBud(int nugs) {
     if(this.kind_bud >= 0) {
-      this.kind_bud += Math.max(this.kind_bud + nugs, 0);
+      this.kind_bud = Math.max(this.kind_bud + nugs, 0);
     } else {
       this.kind_bud += nugs;
     }
@@ -164,7 +164,7 @@ public class Player {
 
   public void setBeers(int beer) {
     if(this.beers >= 0) {
-      this.beers += Math.max(this.beers + beer, 0);
+      this.beers = Math.max(this.beers + beer, 0);
     } else {
       this.beers += beer;
     }
