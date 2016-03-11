@@ -1,3 +1,14 @@
+#if($game.isDead($player))
+<center> <div class="col-md-4"> </center>
+  <div class="stats">
+    <h1>YOU HAVE DIED</h1>
+    <img src="/images/death.jpg" alt="you-dead">
+
+    <h3><center> <a href="/" class ="btn btn-warning"> START A NEW GAME </a></center> </h3>
+  </div>
+</div>
+#else
+
 <div class="content">
 
   <p> <center> <img src="http://img.bleacherreport.net/img/images/photos/003/229/401/hi-res-18a50f402daa9532e9da4a3e3c3a009c_crop_north.jpg?w=630&h=420&q=75"> </center> </p>
@@ -56,3 +67,4 @@
   </div>
 
 </div>
+#end

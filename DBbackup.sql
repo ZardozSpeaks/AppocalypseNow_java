@@ -167,44 +167,29 @@ ALTER TABLE ONLY quadrants ALTER COLUMN id SET DEFAULT nextval('quadrants_id_seq
 --
 
 COPY games (id, start_time, game_running) FROM stdin;
-1	1568249	t
-2	1568308	t
-3	1568322	t
-4	1568392	t
-5	1568557	t
-6	1568595	t
-7	1568630	t
-8	1568665	t
-9	1568672	t
-10	1569113	t
-11	1569404	t
-12	1569843	t
-13	1569899	t
-14	3000	t
-15	1457564255	t
-16	1457564333	t
-17	1457564551	t
-18	1570724	t
-19	1570895	t
-20	1571342	t
-21	1574256	t
-22	1574499	t
-23	1575260	t
-24	1575310	t
-25	1575353	t
-26	1575454	t
-27	1575517	t
-28	1575577	t
-29	1575751	t
-30	1575782	t
-31	1575808	t
-32	1575835	t
-33	1575855	t
-34	1575886	t
-35	1575915	t
-36	1575962	t
-37	1576059	t
-38	1576109	t
+1	1656434	t
+2	1657441	t
+3	1657602	t
+4	1657682	t
+5	1657700	t
+6	1657713	t
+7	1657784	t
+8	1657867	t
+9	1657917	t
+10	1658279	t
+11	1658604	t
+12	1658879	t
+13	1659664	t
+14	1659882	t
+15	1660250	t
+16	1660410	t
+17	1661588	t
+18	1661732	t
+19	1661858	t
+20	1661945	t
+21	1662071	t
+22	1662117	t
+23	1662180	t
 \.
 
 
@@ -212,7 +197,7 @@ COPY games (id, start_time, game_running) FROM stdin;
 -- Name: games_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('games_id_seq', 38, true);
+SELECT pg_catalog.setval('games_id_seq', 23, true);
 
 
 --
@@ -220,52 +205,29 @@ SELECT pg_catalog.setval('games_id_seq', 38, true);
 --
 
 COPY players (id, name, image, growler, coffee_cup, dime_bag, doughnut_box, buzz, fullness, alertness, kind_bud, doughnuts, beers, coffees) FROM stdin;
-1	Paul	2	f	f	f	f	11	10	10	0	0	0	0
-2	Paul	2	f	f	f	f	11	10	10	0	0	0	0
-3	George	2	f	f	f	f	11	10	10	0	0	0	0
-4	John	3	f	f	f	f	11	10	10	0	0	0	0
-5	John	2	f	f	f	f	11	10	10	0	0	0	0
-6	Sandy	3	f	f	f	f	11	10	10	0	0	0	0
-7	Tim	3	f	f	f	f	11	10	10	0	0	0	0
-28	Charles	3	f	f	f	f	11	10	10	0	0	0	0
-29	Charles	3	f	f	f	f	11	10	10	0	5	6	0
-30	asdf	2	f	f	f	f	11	10	10	0	0	0	0
-31	Karl	3	f	f	f	f	11	10	10	0	0	0	0
-32	Boo	4	f	f	f	f	11	10	10	0	0	0	0
-33	gradle	1	f	f	f	f	11	10	10	0	0	0	0
-34	gradle	2	f	f	f	f	11	10	10	0	0	0	0
-35	gradle	1	f	f	f	f	11	10	10	0	0	0	0
-36	gtgt	2	f	f	f	f	11	10	10	0	0	0	0
-37	asdf	1	f	f	f	f	11	10	10	0	0	0	0
-8	Willis	4	f	f	f	f	-5	-6	-6	0	0	0	0
-9	Willis	3	f	f	f	f	11	10	10	0	0	0	0
-10	Paul	1	f	f	f	f	11	10	10	0	0	0	0
-11	Carl	2	f	f	f	f	11	10	10	0	0	0	0
-12	Carl	3	f	f	f	f	11	10	10	0	0	0	0
-13	tammy	4	f	f	f	f	11	10	10	0	0	0	0
-14	Paula	4	f	f	f	f	11	10	10	0	0	0	0
-15	Saul	1	f	f	f	f	11	10	10	0	0	0	0
-16	Carl	2	f	f	f	f	11	10	10	0	0	0	0
-17	Jane	4	f	f	f	f	11	10	10	0	0	0	0
-18	Taylor	3	f	f	f	f	11	10	10	0	0	0	0
-19	Carolyn	1	f	f	f	f	11	10	10	0	0	0	0
-20	testinnnnng	2	f	f	f	f	11	10	10	0	0	0	0
-21	sdfdsf	2	f	f	f	f	11	10	10	0	0	0	0
-22	sdsf	2	f	f	f	f	11	10	10	0	0	0	0
-23	sdfdfsd	2	f	f	f	f	11	10	10	0	0	0	0
-24	ddsfdsf	1	f	f	f	f	11	10	10	0	0	0	0
-25	Rufus	3	f	f	f	f	11	10	10	0	0	0	0
-26	Csrl	2	f	f	f	f	11	10	10	0	0	0	0
-38	t	1	f	f	f	f	11	10	10	0	0	0	0
-39	asdf	1	f	f	f	f	11	10	10	0	0	0	0
-40	rter	1	f	f	f	f	11	10	10	0	0	0	0
-41	reerreerer	1	f	f	f	f	11	10	10	0	0	0	0
-42	Pied darth pipier	3	f	f	f	f	11	10	10	0	0	0	0
-43	dorkus	2	f	f	f	f	11	10	10	0	0	0	0
-44	Stah	4	f	f	f	f	11	10	10	0	0	0	0
-45	ereer	4	f	f	f	f	11	10	10	0	0	0	0
-46	;	3	f	f	f	f	11	10	10	0	0	0	0
-27	Cheryl	4	f	f	f	f	-113	-114	-114	0	0	0	0
+18	Saul	7	f	f	f	f	11	10	10	0	10	46	0
+21	Woot	6	f	f	f	f	11	4	0	0	0	35	0
+8	James	9	f	f	f	f	11	0	10	0	0	4	0
+9	John	3	f	f	f	f	11	10	10	0	0	0	0
+10	more ladies	4	f	f	f	f	11	10	10	0	0	0	0
+11	fdfds	2	f	f	f	f	11	10	10	0	0	0	0
+12	ssfvcv	9	f	f	f	f	11	10	10	0	0	0	0
+13	dsfdsf	4	f	f	f	f	11	10	10	0	0	0	0
+14	fxdfdsfds	5	f	f	f	f	11	10	10	0	0	0	0
+15	paul	7	f	f	f	f	11	10	10	0	0	0	0
+16	Paul	8	f	f	f	f	11	10	10	0	0	0	0
+19	Charlie	3	f	f	f	f	11	10	10	0	1	5	2
+20	Saul	2	f	f	f	f	11	10	10	0	0	0	0
+29	G	1	f	f	f	f	11	0	10	0	0	0	0
+26	ffff	5	f	f	f	f	11	0	10	0	13	10	0
+17	Paulie	1	f	f	f	f	11	10	10	0	1	77	0
+23	Raul	3	f	f	f	f	11	-1	-1	0	21	7	0
+24	chucvk	6	f	f	f	f	11	10	10	0	0	0	0
+30	FF	2	f	f	f	f	11	0	10	0	0	0	0
+22	gr	2	f	f	f	f	11	-3	-3	0	20	12	3276
+27	ggg	1	f	f	f	f	11	0	10	0	0	0	0
+25	dfsdf	2	f	f	f	f	11	0	8	0	8	3	0
+28	ggg	2	f	f	f	f	11	0	10	0	0	0	0
 \.
 
 
@@ -273,7 +235,7 @@ COPY players (id, name, image, growler, coffee_cup, dime_bag, doughnut_box, buzz
 -- Name: players_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('players_id_seq', 46, true);
+SELECT pg_catalog.setval('players_id_seq', 30, true);
 
 
 --
@@ -282,6 +244,7 @@ SELECT pg_catalog.setval('players_id_seq', 46, true);
 
 COPY quadrants (id, name) FROM stdin;
 1	Providence Park
+2	Park Blocks
 \.
 
 
@@ -289,7 +252,7 @@ COPY quadrants (id, name) FROM stdin;
 -- Name: quadrants_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('quadrants_id_seq', 1, true);
+SELECT pg_catalog.setval('quadrants_id_seq', 2, true);
 
 
 --
