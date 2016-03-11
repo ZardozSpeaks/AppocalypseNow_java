@@ -274,8 +274,8 @@ public class App {
 
       if (userAction.equals("search")) {
         game.search(player,quadrant);
-      } else if (userAction.equals("drinkBeer")) {
-        game.drinkBeer(player);
+      } else if (userAction.equals("drinkCoffee")) {
+        game.drinkCoffee(player);
       } else if (userAction.equals("eatDoughnuts")) {
         game.eatDoughnuts(player);
       } else if (userAction.equals("burn")){
@@ -310,12 +310,11 @@ public class App {
 
       quadrant.setCoffee();
       quadrant.setDoughnut();
-      quadrant.setBeer();
 
       if (userAction.equals("search")) {
         game.search(player,quadrant);
-      } else if (userAction.equals("drinkBeer")) {
-        game.drinkBeer(player);
+      } else if (userAction.equals("drinkCoffee")) {
+        game.drinkCoffee(player);
       } else if (userAction.equals("eatDoughnuts")) {
         game.eatDoughnuts(player);
       } else if (userAction.equals("burn")){
@@ -348,8 +347,8 @@ public class App {
       Quadrant quadrant = Quadrant.find(15);
       String userAction = request.queryParams("activity");
 
-      quadrant.setCoffee();
-      quadrant.setDoughnut();
+
+      quadrant.setKindBud();
       quadrant.setBeer();
 
       if (userAction.equals("search")) {
@@ -394,8 +393,8 @@ public class App {
 
       if (userAction.equals("search")) {
         game.search(player,quadrant);
-      } else if (userAction.equals("drinkBeer")) {
-        game.drinkBeer(player);
+      } else if (userAction.equals("drinkCoffee")) {
+        game.drinkCoffee(player);
       } else if (userAction.equals("eatDoughnuts")) {
         game.eatDoughnuts(player);
       } else if (userAction.equals("burn")){
@@ -429,13 +428,13 @@ public class App {
       String userAction = request.queryParams("activity");
 
       quadrant.setCoffee();
-      quadrant.setDoughnut();
+      quadrant.setKindBud();
       quadrant.setBeer();
 
       if (userAction.equals("search")) {
         game.search(player,quadrant);
-      } else if (userAction.equals("drinkBeer")) {
-        game.drinkBeer(player);
+      } else if (userAction.equals("drinkCoffee")) {
+        game.drinkCoffee(player);
       } else if (userAction.equals("eatDoughnuts")) {
         game.eatDoughnuts(player);
       } else if (userAction.equals("burn")){
@@ -469,15 +468,14 @@ public class App {
       String userAction = request.queryParams("activity");
 
       quadrant.setCoffee();
-      quadrant.setDoughnut();
       quadrant.setBeer();
 
       if (userAction.equals("search")) {
         game.search(player,quadrant);
       } else if (userAction.equals("drinkBeer")) {
         game.drinkBeer(player);
-      } else if (userAction.equals("eatDoughnuts")) {
-        game.eatDoughnuts(player);
+      } else if (userAction.equals("sleep")) {
+        game.drinkCoffee(player);
       } else if (userAction.equals("burn")){
         game.burnOneDown(player);
       }
@@ -508,14 +506,14 @@ public class App {
       Quadrant quadrant = Quadrant.find(11);
       String userAction = request.queryParams("activity");
 
-      quadrant.setCoffee();
+      quadrant.setKindBud();
       quadrant.setDoughnut();
-      quadrant.setBeer();
+
 
       if (userAction.equals("search")) {
         game.search(player,quadrant);
-      } else if (userAction.equals("drinkBeer")) {
-        game.drinkBeer(player);
+      } else if (userAction.equals("sleep")) {
+        game.drinkCoffee(player);
       } else if (userAction.equals("eatDoughnuts")) {
         game.eatDoughnuts(player);
       } else if (userAction.equals("burn")){
@@ -550,12 +548,12 @@ public class App {
 
       quadrant.setCoffee();
       quadrant.setDoughnut();
-      quadrant.setBeer();
+
 
       if (userAction.equals("search")) {
         game.search(player,quadrant);
-      } else if (userAction.equals("drinkBeer")) {
-        game.drinkBeer(player);
+      } else if (userAction.equals("sleep")) {
+        game.drinkCoffee(player);
       } else if (userAction.equals("eatDoughnuts")) {
         game.eatDoughnuts(player);
       } else if (userAction.equals("burn")){
