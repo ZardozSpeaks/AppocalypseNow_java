@@ -245,6 +245,20 @@ SELECT pg_catalog.setval('players_id_seq', 30, true);
 COPY quadrants (id, name) FROM stdin;
 1	Providence Park
 2	Park Blocks
+3	Rogue Brewery
+4	Blue Star Donuts
+5	Portland International Airport
+6	Food Trucks
+7	Moda Center
+8	Radio Room
+9	PSU
+10	Epicodus
+11	Voodoo Donuts
+12	Powells
+13	Ladds Addition
+14	Hawthorne Food Carts
+15	Circa 33
+16	Aladdin Theater
 \.
 
 
@@ -252,7 +266,7 @@ COPY quadrants (id, name) FROM stdin;
 -- Name: quadrants_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('quadrants_id_seq', 2, true);
+SELECT pg_catalog.setval('quadrants_id_seq', 16, true);
 
 
 --
