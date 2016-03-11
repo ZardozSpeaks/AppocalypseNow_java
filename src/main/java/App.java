@@ -590,17 +590,17 @@ public class App {
       String userAction = request.queryParams("activity");
 
       quadrant.setCoffee();
-      quadrant.setDoughnut();
+      quadrant.setKindBud();
       quadrant.setBeer();
 
       if (userAction.equals("search")) {
         game.search(player,quadrant);
-      } else if (userAction.equals("drinkBeer")) {
-        game.drinkBeer(player);
       } else if (userAction.equals("eatDoughnuts")) {
         game.eatDoughnuts(player);
-      } else if (userAction.equals("burn")){
+      } else if (userAction.equals("burn")) {
         game.burnOneDown(player);
+      } else if (userAction.equals("sleep")){
+        game.drinkCoffee(player);
       }
       response.redirect("/ne/1");
       return null;
@@ -629,7 +629,6 @@ public class App {
       Quadrant quadrant = Quadrant.find(6);
       String userAction = request.queryParams("activity");
 
-      quadrant.setCoffee();
       quadrant.setDoughnut();
       quadrant.setBeer();
 
@@ -637,8 +636,8 @@ public class App {
         game.search(player,quadrant);
       } else if (userAction.equals("drinkBeer")) {
         game.drinkBeer(player);
-      } else if (userAction.equals("eatDoughnuts")) {
-        game.eatDoughnuts(player);
+      } else if (userAction.equals("drinkCoffee")) {
+        game.drinkCoffee(player);
       } else if (userAction.equals("burn")){
         game.burnOneDown(player);
       }
@@ -669,16 +668,16 @@ public class App {
       Quadrant quadrant = Quadrant.find(7);
       String userAction = request.queryParams("activity");
 
-      quadrant.setCoffee();
       quadrant.setDoughnut();
       quadrant.setBeer();
 
       if (userAction.equals("search")) {
         game.search(player,quadrant);
-      } else if (userAction.equals("drinkBeer")) {
-        game.drinkBeer(player);
       } else if (userAction.equals("eatDoughnuts")) {
         game.eatDoughnuts(player);
+      } else if (userAction.equals("death")) {
+        player.setBuzz(-100);
+        player.updateStats();
       } else if (userAction.equals("burn")){
         game.burnOneDown(player);
       }
@@ -715,10 +714,11 @@ public class App {
 
       if (userAction.equals("search")) {
         game.search(player,quadrant);
+      } else if (userAction.equals("loweralertness")) {
+        player.setAlertness(-1);
+        player.update();
       } else if (userAction.equals("drinkBeer")) {
         game.drinkBeer(player);
-      } else if (userAction.equals("eatDoughnuts")) {
-        game.eatDoughnuts(player);
       } else if (userAction.equals("burn")){
         game.burnOneDown(player);
       }
