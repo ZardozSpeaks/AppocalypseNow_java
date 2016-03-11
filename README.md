@@ -1,12 +1,12 @@
-# _{Application Name}_
+# _Appocalypse Now_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _This is a text-based adventure set in a post-apocalyptic Portland. To survive you must traverse the four quadrants of the city, while obtaining and maintaining a heady buzz. 03/11/2016_
 
-#### By _**David Remington**_
+#### By _**David Remington, Jacob Steinberg, Chris Houghton, Kevin Mattison**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_A text-based adeventure set in post-apocalyptic Portland. This is a group project for Epicodus Java week five._
 
 ## Setup/Installation Requirements
 
@@ -20,11 +20,11 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_Currently the system is setup to accomadate all features._
 
 ## Support and contact details
 
-_Contact me through GitHub at user ZardozSpeaks if you have any issues_
+_Contact me through GitHub at user ZardozSpeaks, Jakemento, KevinExplosion, cehoughton  if you have any issues_
 
 ## Technologies Used
 
@@ -34,4 +34,4 @@ _Java, gradle, maven, spark, and velocity. FluentLenium and jUnit for testing_
 
 *Available under the MIT license*
 
-Copyright (c) 2015 **_David Remington_**
+Copyright (c) 2015 **_David Remington, Jacob Steinberg, Chris Houghton, Kevin Mattison_**
