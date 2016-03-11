@@ -674,7 +674,7 @@ public class App {
       } else if (userAction.equals("eatDoughnuts")) {
         game.eatDoughnuts(player);
       } else if (userAction.equals("death")) {
-        player.setBuzz(-100);
+        player.setBuzz(-5);
         player.updateStats();
       } else if (userAction.equals("burn")){
         game.burnOneDown(player);
