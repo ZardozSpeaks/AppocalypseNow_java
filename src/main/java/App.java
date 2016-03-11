@@ -714,7 +714,7 @@ public class App {
         game.search(player,quadrant);
       } else if (userAction.equals("loweralertness")) {
         player.setAlertness(-1);
-        player.update();
+        player.updateStats();
       } else if (userAction.equals("drinkBeer")) {
         game.drinkBeer(player);
       } else if (userAction.equals("burn")){
